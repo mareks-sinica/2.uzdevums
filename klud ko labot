@@ -1,0 +1,40 @@
+<?php
+                if(isset($_POST['submit'])){
+                if (empty ($_POST["name"])) {
+                 echo "<b>Laukums nedrīkst būt tukš</b><br/>";
+                } else {
+                    $name = $_POST ["name"];
+                    if (!preg_match ("/^[a-zA-z]*$/", $name) ) {
+                        echo "<b>Tikai burti var tikt izmantoti vārdā</b><br/>";
+                    } else {
+                        echo "<b>Vārds:</b>{$_POST['name']}<br/>";
+                    }
+                }
+
+                if (empty ($_POST["surname"])) {
+                    echo "<b>Laukums nedrīkst būt tukš</b><br/>";
+                } else {
+                    $surname = $_POST ["surname"];
+                    if (!preg_match ("/^[a-zA-z]*$/", $surname) ) {
+                        echo "<b>Tikai burti var tikt izmantoti uzvārdā</b><br/>";
+                    } else {
+                        echo "<b>Uzvārds:</b>{$_POST['surname']}<br/>";
+                    }
+                }
+
+                if (empty ($_POST["email"])) {
+                    echo "<b>E-pasta laukums nedrīkst būt tukš</b><br/>";
+                } else {
+                    echo "<b>E-pasts:</b>{$_POST['email']}<br/>";
+                }
+
+                $mobile = $_POST ["mobile"];
+                if (!preg_match ("/^[0-9]*$/", $mobile) ){
+                    echo "<b>Telefona numurā var būt tiaki skaitļi</b><br/>";
+                } else {
+                    echo "<b>Telefons:</b>{$_POST['mobile']}<br/>";
+                }
+
+                echo "<b>Jūsu jautājums:</b>{$_POST['question']}";
+            }
+        ?>
